@@ -1,0 +1,547 @@
+:root {
+    --bg:#0045f5;
+    --muted:#0d0d0c00;
+    --text:#000000;
+    --sub:#000000;
+    --brand:#ffc107;
+    --brand-2:#664d03;
+    --stroke:#ffffff33;
+    --radius:20px;
+    --shadow:0 20px 40px rgba(0,0,0,.35);
+    --pix-color: #4b2c20;
+    --nav-bg: rgba(11,13,18,.85);
+}
+
+*{box-sizing:border-box;margin:0;padding:0}
+
+body {
+    font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, 'Helvetica Neue', Arial, sans-serif;
+    color: var(--text);
+    background: url("https://www.papeiseparede.com.br/7744-thickbox_default/papel-de-parede-bolos-e-paes.jpg.webp") no-repeat center center fixed;
+    background-size: cover;
+    line-height: 1.6;
+}
+
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+.container{max-width:1200px;margin:0 auto;padding:0 20px}
+
+/* ========================================
+   HEADER E NAVEGAÇÃO
+   ======================================== */
+header {
+    position:sticky;top:0;z-index:50;
+    backdrop-filter:saturate(180%) blur(12px);
+    background:var(--nav-bg);
+    border-bottom:1px solid var(--stroke);
+}
+
+.nav{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding: 0 0;
+    height: 110px;
+}
+
+.logo{display:none;}
+.logo-badge{display:none;}
+
+.logo-link {
+    display: flex;
+    align-items: center;
+}
+
+.logo-image {
+    height: 90px;
+    width: auto;
+    margin-right: 15px;
+    border-radius: 50%;
+    border: 3px solid var(--brand);
+    box-shadow: 0 0 15px rgba(255, 193, 7, 0.7);
+    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.logo-image:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 25px var(--brand);
+}
+
+.nav-links{display:flex;gap:20px;align-items:center}
+
+.nav-links a {
+    color: white;
+    font-weight: 600;
+    font-size: 1.1em;
+    padding: 10px 15px;
+    position: relative;
+    overflow: hidden;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: color 0.4s ease, transform 0.2s;
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: var(--brand);
+    transform: translateX(-100%);
+    transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.nav-links a:hover {
+    color: var(--brand);
+    transform: translateY(-2px);
+}
+
+.nav-links a:hover::after {
+    transform: translateX(0);
+}
+
+/* ========================================
+   BOTÕES
+   ======================================== */
+.btn {
+    display:inline-flex;align-items:center;justify-content:center;gap:8px;
+    padding:10px 16px;border-radius:12px;border:1px solid var(--stroke);
+    background:rgba(255,255,255,.03);font-weight:600;cursor:pointer;
+    transition:all .3s ease-in-out;
+    position: relative;overflow: hidden;
+}
+
+.btn.primary {
+    background: linear-gradient(135deg, var(--brand), var(--brand-2));
+    color:#0b0d12;border-color:transparent;
+    box-shadow: 0 0 15px var(--brand-2), inset 0 0 10px rgba(255,255,255,0.2);
+}
+
+.btn:hover, .btn.primary:hover, .card button:hover {
+    opacity:1;
+    transform: scale(1.05);
+    box-shadow:0 0 25px var(--brand);
+}
+
+.btn:active, .btn.primary:active, .card button:active {
+    transform: scale(0.98);
+    box-shadow:0 0 10px var(--brand);
+}
+
+.btn.secondary {
+    background-color: #6c757d;
+    color: white;
+    border-color: transparent;
+}
+
+.btn.secondary:hover {
+    background-color: #5a6268;
+}
+
+/* ========================================
+   LOGIN PAGE
+   ======================================== */
+#login-page {
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    height:100vh;
+    text-align:center;
+    padding:20px;
+    background: rgba(0,0,0,0.45);
+}
+
+.titulo-login {
+    font-size:3rem;
+    font-weight:800;
+    color:white;
+    margin-bottom:30px;
+    text-shadow: 2px 2px 10px rgba(0,0,0,0.7);
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUp 1s ease forwards;
+}
+
+#login-page .btn {
+    font-size:1.2rem;
+    padding:14px 30px;
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUp 1.2s ease forwards;
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* ========================================
+   BANNER E SEÇÕES
+   ======================================== */
+.banner {
+    padding:80px 20px;text-align:center;margin-top:20px;
+    border-radius:var(--radius);
+    background:linear-gradient(135deg,var(--brand),var(--brand-2));
+    color:#0b0d12;
+    box-shadow: var(--shadow);
+}
+
+.banner h1 {font-size:2.5rem;margin-bottom:10px}
+.banner p {font-size:1.2rem;color:#0b0d12;opacity:0.85}
+
+/* ========================================
+   PRODUTOS
+   ======================================== */
+.produtos {padding:50px 0}
+.produtos h2 {font-size:2rem;margin-bottom:30px;text-align:center}
+
+.card-container {
+    display:grid;gap:20px;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+}
+
+.card {
+    background:rgba(255, 255, 255, 0.9);
+    border:1px solid var(--stroke);
+    border-radius:16px;box-shadow:var(--shadow);overflow:hidden;
+    transform:translateY(0);opacity:1;
+    transition:all .4s ease;
+}
+
+.card.show {transform:translateY(0);opacity:1}
+.card img {width:100%;height:200px;object-fit:cover}
+.card h3 {margin:15px;color:var(--brand-2)}
+.card p {margin:0 15px 10px;color:var(--sub)}
+
+.card button {
+    margin:15px auto;display:block;
+    background:linear-gradient(135deg,var(--brand),var(--brand-2));
+    color:#0b0d12;border:none;padding:10px 20px;
+    border-radius:12px;font-weight:600;cursor:pointer;
+    transition: all .3s ease-in-out;
+    box-shadow: 0 0 15px var(--brand-2), inset 0 0 10px rgba(255,255,255,0.2);
+}
+
+/* ========================================
+   SOBRE E CONTATO
+   ======================================== */
+.sobre, .contatos {padding:50px 0;text-align:center}
+
+.sobre p {
+    max-width:700px;margin:0 auto;color:var(--sub);
+    background:rgba(255, 255, 255, 0.8);padding:20px;border-radius:12px;
+}
+
+.icones-contato {display:flex;justify-content:center;gap:30px;margin-top:20px;}
+.icones-contato img {height:40px;width:auto;transition:transform 0.3s ease;cursor:pointer;}
+.icones-contato img:hover { transform:scale(1.1); }
+
+/* ========================================
+   FOOTER
+   ======================================== */
+footer {
+    border-top:1px solid var(--stroke);text-align:center;padding:20px;
+    color:var(--sub);margin-top:40px; background: rgba(255, 255, 255, 0.8);
+}
+
+/* ========================================
+   MODAL DE DADOS DO CLIENTE
+   ======================================== */
+#modalDadosCliente {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    overflow-y: auto;
+}
+
+#modalDadosCliente .modal-content {
+    background: white;
+    padding: 40px;
+    border-radius: 20px;
+    max-width: 500px;
+    width: 90%;
+    box-shadow: 0 15px 35px rgba(0,0,0,.6);
+    border: 3px solid var(--brand);
+    animation: modalOpen 0.3s ease-out forwards;
+}
+
+#modalDadosCliente h2 {
+    margin-top: 0;
+    color: var(--text);
+    border-bottom: 2px solid var(--brand);
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    font-size: 1.8em;
+    text-align: center;
+}
+
+#modalDadosCliente div {
+    margin-bottom: 20px;
+}
+
+#modalDadosCliente label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: var(--text);
+}
+
+#modalDadosCliente input[type="text"],
+#modalDadosCliente input[type="tel"] {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--stroke);
+    border-radius: 6px;
+    box-sizing: border-box;
+    font-size: 1em;
+    transition: border-color 0.3s;
+    background: white;
+}
+
+#modalDadosCliente input:focus {
+    border-color: var(--brand);
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(255, 193, 7, 0.1);
+}
+
+#modalDadosCliente input::placeholder {
+    color: #aaa;
+    opacity: 1;
+}
+
+/* ========================================
+   MODAL NOTA FISCAL
+   ======================================== */
+#notaFiscal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,0.7);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 9998;
+    overflow-y: auto;
+}
+
+.nota-content {
+    background: white;
+    color: black;
+    padding: 30px;
+    border-radius: 20px;
+    max-width: 500px;
+    width: 90%;
+    text-align: center;
+    box-shadow: 0 15px 35px rgba(0,0,0,.6);
+    border: 3px solid var(--brand);
+    animation: modalOpen 0.3s ease-out forwards;
+}
+
+.nota-content h2 {
+    margin-bottom: 15px;
+    color: var(--text);
+}
+
+.nota-content .opcoes-pagamento {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.nota-content .opcoes-pagamento .btn {
+    width: 100%;
+    margin: 0;
+    font-size: 0.9em;
+}
+
+.nota-cliente-info {
+    border: 1px dashed var(--stroke);
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    text-align: left;
+}
+
+.nota-cliente-info p {
+    margin: 5px 0;
+}
+
+/* ========================================
+   MODAL CAIXA
+   ======================================== */
+#modalCaixa {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.85);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 10000;
+}
+
+.caixa-content {
+    background: linear-gradient(145deg, #ffffff, #f0f0f0);
+    color: #333;
+    padding: 40px;
+    border-radius: 20px;
+    max-width: 450px;
+    text-align: center;
+    box-shadow: 0 15px 35px rgba(0,0,0,.6);
+    border: 3px solid var(--brand);
+    animation: modalOpen 0.3s ease-out forwards;
+}
+
+.caixa-content h2 {
+    color: var(--pix-color);
+    font-size: 2.2em;
+    margin-bottom: 15px;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+}
+
+.caixa-content p {
+    font-size: 1.1em;
+    margin-bottom: 30px;
+    color: #555;
+}
+
+.caixa-content .btn {
+    background-color: var(--pix-color);
+    color: white;
+    font-size: 1.1em;
+    padding: 12px 25px;
+    border-radius: 10px;
+    transition: background-color 0.3s;
+}
+
+.caixa-content .btn:hover {
+    background-color: #3b2118;
+}
+
+/* ========================================
+   PAGAMENTO PIX (LEGADO)
+   ======================================== */
+#pagamento {
+    position:fixed;top:0;left:0;width:100%;height:100%;
+    background-color:rgba(0,0,0,0.8);
+    display:none;flex-direction:column;justify-content:center;align-items:center;
+    font-size:2rem;color:var(--text);z-index:2000;
+}
+
+#pagamento-box {text-align:center;}
+
+#qrCode {
+    display:none;margin-top:20px;width:200px;height:200px;border-radius:16px;
+}
+
+#qrCode.show {display: block;animation: pulse 1.5s infinite;}
+
+@keyframes pulse {
+    0% { transform: scale(1); opacity: 0.8; }
+    50% { transform: scale(1.05); opacity: 1; }
+    100% { transform: scale(1); opacity: 0.8; }
+}
+
+#pagamento h2.loading::after {
+    content: '';display: inline-block;margin-left: 5px;
+    animation: dots 1.5s infinite steps(4, end);
+}
+
+@keyframes dots {
+    0% { content: ''; }
+    33% { content: '.'; }
+    66% { content: '..'; }
+    100% { content: '...'; }
+}
+
+#progressBarContainer {
+    width: 250px;height: 20px;background: rgba(255,255,255,0.2);
+    border-radius: 12px;margin-top: 20px;overflow: hidden;
+}
+
+#progressBar {
+    height: 100%;width: 0%;
+    background: linear-gradient(135deg,var(--brand),var(--brand-2));
+    border-radius: 12px;transition: width 0.3s ease;
+}
+
+/* ========================================
+   ANIMAÇÕES
+   ======================================== */
+@keyframes modalOpen {
+    from { opacity: 0; transform: scale(0.8); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+.toast {
+    position: fixed;bottom: 20px;right: 20px;background: var(--brand);
+    color: #fff;padding: 12px 18px;border-radius: 12px;
+    box-shadow: var(--shadow);font-size: 14px;
+    animation: fadeInOut 3s forwards;z-index: 4000;
+}
+
+@keyframes fadeInOut {
+    0% {opacity: 0; transform: translateY(20px);}
+    10% {opacity: 1; transform: translateY(0);}
+    90% {opacity: 1;}
+    100% {opacity: 0; transform: translateY(20px);}
+}
+
+/* ========================================
+   RESPONSIVIDADE
+   ======================================== */
+@media (max-width: 600px) {
+    /* Modais */
+    #modalDadosCliente .modal-content,
+    .nota-content,
+    .caixa-content {
+        padding: 25px;
+        width: 95%;
+    }
+
+    #modalDadosCliente h2,
+    .nota-content h2 {
+        font-size: 1.5em;
+    }
+
+    /* Navbar */
+    .nav {
+        height: 70px;
+    }
+
+    .logo-image {
+        height: 50px;
+        margin-right: 10px;
+        box-shadow: none;
+        border: 2px solid var(--brand);
+    }
+
+    .nav-links {
+        gap: 5px;
+    }
+
+    .nav-links a {
+        font-size: 0.75em;
+        padding: 6px 4px;
+    }
+
+    .nav-links a::after {
+        height: 2px;
+    }
+}
