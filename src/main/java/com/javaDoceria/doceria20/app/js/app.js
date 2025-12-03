@@ -27,8 +27,38 @@ function login() {
     if (loginPage && storePage) {
         loginPage.style.display = 'none';
         storePage.style.display = 'block';
+
+        // 🔑 GARANTE QUE O HEADER SE COMPORTE CORRETAMENTE APÓS O LOGIN
+        setTimeout(() => {
+            // Rola para o topo (início da loja)
+            window.scrollTo(0, 0);
+            // Dispara o evento de scroll para a função handleScroll configurar o header
+            handleScroll();
+        }, 100);
     }
 }
+
+// 🔑 NOVO: FUNÇÃO PARA TRATAR O SCROLL E ENCOLHER O HEADER
+/**
+ * Adiciona ou remove a classe de encolhimento no cabeçalho.
+ */
+function handleScroll() {
+    const header = document.querySelector('header');
+    if (!header) return;
+
+    // Distância de rolagem em pixels para ativar o encolhimento
+    const scrollOffset = 50;
+
+    // Verifica se a rolagem vertical é maior que o offset
+    if (window.scrollY > scrollOffset) {
+        // Se rolou, adiciona a classe que encolhe o header
+        header.classList.add('header-scroll');
+    } else {
+        // Se está no topo, remove a classe e volta ao normal
+        header.classList.remove('header-scroll');
+    }
+}
+
 
 /**
  * Fecha o modal de pagamento Pix
@@ -365,6 +395,12 @@ document.addEventListener('DOMContentLoaded', function() {
     configurarInputNome();
     configurarInputTelefone();
     configurarInputCPFouCNPJ();
+
+    // 🔑 NOVO: Adiciona listener para o evento de scroll
+    window.addEventListener('scroll', handleScroll);
+
+    // Chama a função uma vez ao carregar a página (necessário se o usuário der F5 no meio da página)
+    window.addEventListener('load', handleScroll);
 });
 
 /**
@@ -437,7 +473,7 @@ function configurarInputCPFouCNPJ() {
     // Aplica a máscara
     idInput.addEventListener('input', function(e) {
         const valor = e.target.value;
-        const numeros = valor.replace(/\D/g, '');
+        const numeros = valor.replace(/\D/g, '/g');
 
         // Define maxLength dinamicamente
         e.target.maxLength = numeros.length <= 11 ? 14 : 18;
