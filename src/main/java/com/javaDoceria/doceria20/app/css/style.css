@@ -20,8 +20,6 @@ body {
     background: url("https://www.papeiseparede.com.br/7744-thickbox_default/papel-de-parede-bolos-e-paes.jpg.webp") no-repeat center center fixed;
     background-size: cover;
     line-height: 1.6;
-    /* 🔑 NOVO AJUSTE: Compensa a nova altura máxima do header (160px + folga) */
-    scroll-padding-top: 170px;
 }
 
 a{color:inherit;text-decoration:none}
@@ -43,9 +41,7 @@ header {
     align-items:center;
     justify-content:space-between;
     padding: 0 0;
-    height: 160px; /* 🔑 AUMENTADO: Altura padrão da barra superior (Antes: 140px) */
-    /* 🔑 ANIMAÇÃO: Transição para o encolhimento */
-    transition: height 0.4s ease-in-out;
+    height: 110px;
 }
 
 .logo{display:none;}
@@ -57,13 +53,12 @@ header {
 }
 
 .logo-image {
-    height: 100px; /* Mantido em 100px */
+    height: 90px;
     width: auto;
     margin-right: 15px;
     border-radius: 50%;
     border: 3px solid var(--brand);
     box-shadow: 0 0 15px rgba(255, 193, 7, 0.7);
-    /* 🔑 ANIMAÇÃO: Transição para o encolhimento do logo */
     transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
@@ -71,21 +66,6 @@ header {
     transform: scale(1.1);
     box-shadow: 0 0 25px var(--brand);
 }
-
-/* 🔑 ESTILOS PARA O HEADER ENCOLHIDO (ativado pelo JS) */
-header.header-scroll .nav {
-    height: 65px; /* Altura menor mantida */
-}
-
-header.header-scroll .logo-image {
-    height: 55px; /* Altura menor da logo mantida */
-    box-shadow: none;
-}
-
-header.header-scroll .nav-links a {
-    padding: 8px 15px;
-}
-/* 🔑 FIM DOS ESTILOS DO HEADER ENCOLHIDO */
 
 .nav-links{display:flex;gap:20px;align-items:center}
 
@@ -202,8 +182,7 @@ header.header-scroll .nav-links a {
    BANNER E SEÇÕES
    ======================================== */
 .banner {
-    padding: 60px 20px; /* 🔑 AJUSTADO: Padding reduzido para diminuir a altura (Antes: 120px 20px) */
-    text-align:center;
+    padding:80px 20px;text-align:center;margin-top:20px;
     border-radius:var(--radius);
     background:linear-gradient(135deg,var(--brand),var(--brand-2));
     color:#0b0d12;
@@ -528,11 +507,6 @@ footer {
    RESPONSIVIDADE
    ======================================== */
 @media (max-width: 600px) {
-    /* 🔑 AJUSTE MOBILE P/ LOGO MAIOR: Compensa a altura máxima do header (70px) */
-    body {
-        scroll-padding-top: 80px;
-    }
-
     /* Modais */
     #modalDadosCliente .modal-content,
     .nota-content,
@@ -558,16 +532,6 @@ footer {
         border: 2px solid var(--brand);
     }
 
-    /* 🔑 AJUSTE MOBILE PARA O HEADER ENCOLHIDO */
-    header.header-scroll .nav {
-        height: 50px; /* Altura menor para mobile */
-    }
-
-    header.header-scroll .logo-image {
-        height: 35px; /* Logo menor em mobile */
-    }
-    /* 🔑 FIM DO AJUSTE MOBILE */
-
     .nav-links {
         gap: 5px;
     }
@@ -580,4 +544,13 @@ footer {
     .nav-links a::after {
         height: 2px;
     }
+}
+.localizacao-texto {
+    text-align: center;
+    margin-top: 30px;
+    font-size: 1.2rem;
+    color: #333;
+}
+.strong {
+    font-weight: 800; /* negrito bem forte */
 }
