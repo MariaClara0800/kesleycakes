@@ -545,3 +545,13 @@ footer {
         height: 2px;
     }
 }
+.localizacao-texto {
+    text-align: center;
+    margin-top: 30px;
+    font-size: 1.2rem;
+    color: #333;
+}
+.strong {
+    font-weight: 800; /* negrito bem forte */
+}
+

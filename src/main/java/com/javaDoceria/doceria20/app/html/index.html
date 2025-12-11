@@ -92,16 +92,81 @@
                 </button>
             </article>
 
+            <!-- Produto 4: Bolo de Abacaxi -->
+            <article class="card">
+                <img src="https://www.receitasnestle.com.br/sites/default/files/styles/recipe_detail_desktop_new/public/srh_recipes/116a7a1d0f5e5fcfcebd4f88017969ec.webp?itok=cGmZFA5v" alt="Bolo de abacaxi com coco">
+                <h3>Bolo de Abacaxi</h3>
+                <p>Refrescante e delicioso.</p>
+                <p><strong>R$ 25,00</strong></p>
+                <button onclick="comprarProduto('Bolo de Abacaxi', 25)" aria-label="Comprar Bolo de Abacaxi">
+                    Comprar
+                </button>
+            </article>
+
+            <!-- Produto 5: Bolo de Ninho -->
+            <article class="card">
+                <img src="https://www.minhasreceitas.blog.br/wp-content/webp-express/webp-images/uploads/2020/08/Bolo-de-leite-Ninho-com-cobertura-de-creme-de-leite-Ninho.jpg.webp" alt="Bolo de Ninho">
+                <h3>Bolo de Ninho</h3>
+                <p>Com o toque especial do leite ninho.</p>
+                <p><strong>R$ 28,00</strong></p>
+                <button onclick="comprarProduto('Bolo de Ninho', 28)" aria-label="Comprar Bolo de Ninho">
+                    Comprar
+                </button>
+            </article>
+
+            <!-- Produto 6: Bolo Sensação -->
+            <article class="card">
+                <img src="https://amogastronomiabrasileira.com.br/wp-content/uploads/2023/11/Bolo-Sensacao.jpg" alt="Bolo Sensação">
+                <h3>Bolo Sensação</h3>
+                <p>Uma combinação irresistível de chocolate e morango.</p>
+                <p><strong>R$ 25,00</strong></p>
+                <button onclick="comprarProduto('Bolo Sensação', 30)" aria-label="Comprar Bolo Sensação">
+                    Comprar
+                </button>
+            </article>
+
+            <!-- Produto 7: Bolo Indisponível (Nozes) -->
+            <article class="card indisponivel">
+                <img src="https://bakeandcakegourmet.com.br/uploads/site/receitas/instagram-bolo-de-nozes-shoefkbj.png" alt="Bolo Indisponível">
+                <h3>Bolo de Nozes</h3>
+                <p>Indisponível no momento</p>
+                <p><strong>Indisponível</strong></p>
+                <button disabled>Indisponível</button>
+            </article>
+
+            <!-- Produto 8: Bolo Indisponível (Limão) -->
+            <article class="card indisponivel">
+                <img src="https://www.receitasnestle.com.br/sites/default/files/styles/recipe_detail_desktop_new/public/srh_recipes/aff3281de6456a3158657b2af97c1386.webp?itok=8D1CzSuR" alt="Bolo Indisponível">
+                <h3>Bolo de Limão</h3>
+                <p>Indisponível no momento</p>
+                <p><strong>Indisponível</strong></p>
+                <button disabled>Indisponível</button>
+            </article>
+
         </div>
     </section>
 
-    <!-- Seção Sobre Nós -->
+    <!-- =======================
+           SOBRE NÓS — AUMENTADO
+           ======================= -->
     <section class="sobre container" id="sobre">
         <h2>Sobre Nós</h2>
+
         <p>
-            Somos uma pequena confeitaria que acredita no poder das receitas tradicionais
-            e do carinho em cada detalhe. Nossos bolos são feitos artesanalmente, com ingredientes
-            selecionados, para trazer aquele gostinho de casa da vovó.
+            A Kesley Cakes nasceu com o propósito de trazer aquele sabor caseiro que lembra infância,
+            alegria e amor. Aqui, cada bolo é preparado artesanalmente, com ingredientes selecionados
+            e muito carinho, sempre mantendo o toque tradicional da confeitaria caseira.
+        </p>
+
+        <p>
+            Nosso compromisso é proporcionar a melhor experiência possível, desde a escolha do sabor
+            até o primeiro pedaço degustado. Trabalhamos diariamente para oferecer produtos frescos,
+            deliciosos e com aquele gostinho que abraça.
+        </p>
+
+        <p>
+            Estamos localizados no <strong>Senac Gama</strong>, onde diariamente preparamos nossas delícias.
+            Venha conhecer nosso cantinho e sentir o cheirinho de bolo fresquinho saindo do forno!
         </p>
     </section>
 
@@ -115,12 +180,17 @@
             <a href="https://instagram.com/minhalojadebolos" target="_blank" rel="noopener noreferrer" title="Siga-nos no Instagram" aria-label="Instagram">
                 <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Ícone Instagram">
             </a>
-            <a href="#" id="pixBtn" title="Pix — clique para copiar a chave" aria-label="Copiar chave Pix">
-                <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/pix.svg"
-                     alt="Ícone Pix"
-                     style="height:40px; width:auto; filter:invert(23%) sepia(20%) saturate(600%) hue-rotate(350deg) brightness(95%) contrast(90%);">
+
+            <!-- Google Maps -->
+            <a href="https://www.google.com/maps/place/Senac+Gama" target="_blank">
+                <img src="https://cdn-icons-png.flaticon.com/512/535/535239.png"
+                     alt="Google Maps" width="40">
             </a>
+
         </div>
+        <p class="localizacao-texto">
+            📍 Localização: <strong>Senac Gama – QI 04, Área Especial, Gama – Brasília/DF</strong>
+        </p>
     </section>
 
     <!-- Rodapé -->
